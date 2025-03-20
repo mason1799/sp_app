@@ -1,0 +1,19 @@
+stages:
+  - security_scan
+
+include:
+  - local: '.gitlab-security-scan.yml'
+
+variables:
+  CI_PROJECT_NAME: "sp_app"
+  CI_DEFAULT_BRANCH: "main"
+
+
+# before_script:
+#   - cd /Users/avery/code/flutter/sp_app && git reset --hard HEAD
+#   - git fetch && git checkout origin/dev
+#   - flutter --version && xcodebuild -version
+
+default:
+  tags:
+    - mac-mini

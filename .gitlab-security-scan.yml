@@ -1,0 +1,34 @@
+include:
+  - project: devops/security-templates/new-scanner-templates
+    file: 
+      - .Coverity.gitlab-ci.yml
+      - .Blackduck.gitlab-ci.yml
+      - .Checkov.gitlab-ci.yml
+    ref: main
+SAST:
+  extends: .coverity:buildless:full
+  stage: security_scan
+  rules:
+    - if: ($CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web")
+  tags:
+    - $RUNNER_TAG_APPSEC
+
+    
+SCA:
+  extends: .blackduck:intelligent
+  stage: security_scan
+  rules:
+    - if: ($CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web")
+  tags:
+    - $RUNNER_TAG_APPSEC
+
+
+
+IaC_scan:
+  extends: .checkov:full
+  stage: security_scan
+  rules:
+    - if: ($CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web")
+  tags:
+    - $RUNNER_TAG_APPSEC
+

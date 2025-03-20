@@ -1,0 +1,79 @@
+name: konesp
+description: 仟帆维保
+publish_to: 'none'
+version: 1.0.18+43
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  jpush_flutter: 3.1.4 #极光推送
+  flutter_staggered_grid_view: 0.7.0 #cell不定高
+  get: 4.6.6 #状态管理
+  cupertino_icons: 1.0.8 #ios
+  cached_network_image: 3.3.1 #图片显示
+  syncfusion_flutter_signaturepad: 28.1.33 #签字
+  dio: 5.7.0 #网络请求
+  get_storage: 2.1.1 #数据存取
+  encrypt: 5.0.1 #加密
+  oktoast: 3.4.0 #吐司toast
+  flutter_oss_aliyun: 6.4.2 #阿里云oss
+  flutter_svg: 2.0.10+1 #svg
+  connectivity_plus: 5.0.2 #网络连接检测
+  flutter_datetime_picker_plus: 2.2.0 #日期选取
+  intl: 0.19.0
+  scroll_to_index: 3.0.1 #锚点定位
+  expandable: 5.0.1 #展开伸缩
+  permission_handler: 11.3.1 #权限管理
+  flutter_image_compress: 2.3.0 #图片压缩库
+  path_provider: 2.1.4 #文件管理器
+  image_picker: 1.1.2 #相机相册选取
+  visibility_detector: 0.4.0+2 #页面切换检测
+  package_info_plus: 8.0.2 #安装包信息
+  url_launcher: 6.3.0 #跳转第三方
+  ft_mobile_agent_flutter: 0.5.2-dev.2 #观测云
+  steel_crypt: 3.0.0+1 #加密
+  calendar_date_picker2: 1.1.7 #日期段选择
+  badges: 3.1.2 #提醒数字
+  sticky_and_expandable_list: 1.1.3 #伸缩展开
+  flutter_screenutil: 5.9.3 #ui适配
+  hive: 2.2.3 #hive数据库
+  hive_flutter: 1.1.0 #hive封装
+  geolocator: 11.1.0 #地理编码
+  sprintf: 7.0.0 #String格式化
+  amap_flutter_location: 3.0.0 #高德定位
+  enum_to_string: 2.0.1 #String和枚举互转
+  app_badge_plus: 1.1.6 #应用角标
+  webview_flutter: 4.2.4 #webview
+  tab_indicator_styler: 2.0.0 #tab
+  flutter_slidable: 3.1.2 #侧滑
+  device_info_plus: 8.2.2 #设备信息
+  image_gallery_saver: 2.0.3 #存储到相册
+  table_calendar: 3.1.2 #工单日历
+  image_cropper: 8.0.2 #裁剪照片
+  kfps: #通力kfps设备空间
+    git:
+      url: git@gitlab.prod.devops.dps.kone.cn:servicestickiness/stickiness_frontend/kfps.git
+      ref: qianfan
+  flutter_constraintlayout: 1.7.0-stable #约束布局
+  web_socket_channel: 3.0.1 #websocket
+  fijkplayer: 0.11.0 #视频播放
+  animated_text_lerp: 2.0.0
+
+dev_dependencies:
+  flutter_lints: 2.0.0
+  dio_http_formatter: 3.2.0
+
+dependency_overrides:
+  intl: 0.19.0
+  win32: 5.5.5
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/image/
+    - assets/resource/
